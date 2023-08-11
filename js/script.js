@@ -1,11 +1,7 @@
 const forms = document.querySelectorAll('.form-step');
 const prevButtons = document.querySelectorAll('.prev-step');
 const nextButtons = document.querySelectorAll('.next-step');
-var formInstance1 = document.getElementsByName('step1');
-var formInstance2 = document.getElementsByName('step2');
-var formInstance3 = document.getElementsByName('step3');
-
-
+var formInstance = document.getElementsByName('step'+currentStep);
 
 let currentStep = 0;
 
@@ -33,9 +29,9 @@ window.addEventListener('load', () => {
 nextButtons.forEach(button => {
     button.addEventListener('click', event => {
         event.preventDefault();
-        debugger;
         currentStep++;
-        
+        window.VWO = window.VWO || [];
+        window.VWO.push(['nls.formAnalysis.markSuccess', formInstance, 1]);
         if (currentStep >= forms.length) {
             currentStep = forms.length - 1;
         }
