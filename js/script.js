@@ -2,7 +2,7 @@ const forms = document.querySelectorAll('.form-step');
 const prevButtons = document.querySelectorAll('.prev-step');
 const nextButtons = document.querySelectorAll('.next-step');
 let currentStep = 0;
-var formInstance = document.getElementsByName('step'+currentStep);
+var formInstance ;
 
 function updateURL() {
     history.replaceState(null, '', `#${currentStep + 1}`);
@@ -29,7 +29,7 @@ nextButtons.forEach(button => {
     button.addEventListener('click', event => {
         event.preventDefault();
         currentStep++;
-        formInstance = document.getElementsByName('step'+currentStep);
+        formInstance = document.getElementsByName('step'+currentStep)[0];
         window.VWO = window.VWO || [];
         window.VWO.push(['nls.formAnalysis.markSuccess', formInstance, 1]);
         if (currentStep >= forms.length) {
