@@ -33,7 +33,9 @@ window.addEventListener('load', () => {
 nextButtons.forEach(button => {
     button.addEventListener('click', event => {
         event.preventDefault();
+        debugger;
         currentStep++;
+        
         if (currentStep >= forms.length) {
             currentStep = forms.length - 1;
         }
