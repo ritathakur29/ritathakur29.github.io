@@ -1,6 +1,11 @@
 const forms = document.querySelectorAll('.form-step');
 const prevButtons = document.querySelectorAll('.prev-step');
 const nextButtons = document.querySelectorAll('.next-step');
+var formInstance1 = document.getElementsByName('step1');
+var formInstance2 = document.getElementsByName('step2');
+var formInstance3 = document.getElementsByName('step3');
+
+
 
 let currentStep = 0;
 
