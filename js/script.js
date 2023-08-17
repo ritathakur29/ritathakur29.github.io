@@ -29,7 +29,7 @@ nextButtons.forEach(button => {
     button.addEventListener('click', event => {
         event.preventDefault();
         currentStep++;
-        formInstance = document.querySelector("form[nls_fa_name="+currentStep+"]");
+        formInstance = document.querySelector("form[nls_fa_name='"+currentStep+"']");
         window.VWO = window.VWO || [];
         window.VWO.push(['nls.formAnalysis.markSuccess', formInstance, 1]);
         if (currentStep >= forms.length) {
